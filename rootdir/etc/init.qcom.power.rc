@@ -110,3 +110,7 @@ on property:vendor.post_boot.parsed=1
     # IRQ 246: kgsl_3d0_irq -> CPU 6
     write /proc/irq/345/smp_affinity_list 7
     write /proc/irq/246/smp_affinity_list 6
+
+on property:persist.sys.device_provisioned=1 && property:sys.boot_completed=1
+    # Cap dex2oat cpu utilization
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max 60
