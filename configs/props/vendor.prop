@@ -173,6 +173,7 @@ vendor.media.omx=0
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+vendor.perf.framepacing.enable=1
 
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
