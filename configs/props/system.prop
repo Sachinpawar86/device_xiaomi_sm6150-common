@@ -1,3 +1,7 @@
+# Battery Saving
+ro.vendor.use_data_netmgrd=true
+pm.sleep_mode=1
+
 # Bluetooth
 vendor.bluetooth.soc=cherokee
 
