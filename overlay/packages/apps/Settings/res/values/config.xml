@@ -58,5 +58,8 @@
     <string name="config_batCurCap">/sys/class/power_supply/bms/charge_full</string>
     <string name="config_batteryRemainingCapacityNode">/sys/class/power_supply/bms/charge_full</string>
     <string name="config_batteryDesignCapacityNode">/sys/class/power_supply/bms/charge_full_design</string>
+
+    <!-- Whether to show double tap ambient settings -->
+    <bool name="config_supports_double_tap_ambient" translatable="false">true</bool>
     
 </resources>
