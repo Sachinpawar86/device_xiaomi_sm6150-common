@@ -195,6 +195,9 @@ PRODUCT_COPY_FILES += \
 # FM
  PRODUCT_PACKAGES += \
      FM2
+	 
+# GameBar Performance Overlay
+$(call inherit-product, packages/apps/GameBar/gamebar.mk)	 
 
 #GNSS
 PRODUCT_PACKAGES += \
