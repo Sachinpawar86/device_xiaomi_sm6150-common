@@ -399,4 +399,8 @@
     <!-- Whether WM DisplayContent supports high performance transitions
          (lower-end devices may want to disable) -->
     <bool name="config_deviceSupportsHighPerfTransitions">false</bool>
+
+    <!-- System Info -->
+    <integer name="config_sysCPUTempMultiplier">1000</integer>
+    
 </resources>
