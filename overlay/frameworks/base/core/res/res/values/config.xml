@@ -402,5 +402,10 @@
 
     <!-- System Info -->
     <integer name="config_sysCPUTempMultiplier">1000</integer>
-    
+
+    <!-- The list of package IDs that are allowed to skip camera high frame rate checks. -->
+    <string-array name="config_cameraHFRPrivAppList" translatable="false">
+        <item>com.android.camera</item>
+    </string-array>
+
 </resources>
