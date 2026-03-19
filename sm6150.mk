@@ -31,6 +31,7 @@ PRODUCT_PACKAGES += \
     libtinycompress \
     sound_trigger.primary.sm6150
 
+$(call soong_config_set,android_hardware_audio,run_64bit,true)
 $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 # Audio XML
@@ -170,6 +171,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-1.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml
+
+# Dolby
+$(call inherit-product, vendor/sony/dolby/setup.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
