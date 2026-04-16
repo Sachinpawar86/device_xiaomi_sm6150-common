@@ -104,6 +104,9 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
+# Device
+ro.product.marketname=Redmi Note 10
+
 # DPM
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.nsrm.bkg.evt=3955
