@@ -79,6 +79,10 @@ vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 
+# Axion ScrollOptimizer
+persist.sys.perf.scroll_opt=true
+persist.sys.perf.scroll_opt.heavy_app=1
+
 # Bluetooth
 bluetooth.hardware.power.operating_voltage_mv=3300
 persist.bluetooth.a2dp_offload.disabled=false
