@@ -101,12 +101,3 @@ ro.lmk.reclaim_scan_threshold=0
 
 # Disable Skia tracing by default
 debug.hwui.skia_tracing_enabled=false
-
-# Add these as PRODUCT_SYSTEM_PROPERTIES (system.prop), You may use utilities as libinit if configuring for unified devices
-ro.infinity.soc=Snapdragon 678
-ro.infinity.battery=5000 mAh
-ro.infinity.display=1080 x 2400, 60 Hz
-ro.infinity.camera=48MP + 8MP + 2MP + 2MP
-
-# Also declare your Device Name with appropirate sepolicy rule(Take libinit in use if Unified)
-ro.product.marketname=Redmi Note 10
