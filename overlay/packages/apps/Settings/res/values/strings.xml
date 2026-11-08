@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Device maintainer -->
+    <string name="build_maintainer_summary" translatable="false">Sachin_07</string>
+    <string name="build_maintainer_donate_url" translatable="false">https://t.me/sachinpawar_07</string>
+
+</resources>
