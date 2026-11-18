@@ -349,10 +349,10 @@ int LedVibratorDevice::write_value(const char *file, const char *value) {
         return -errno;
     }
 
-    ret = TEMP_FAILURE_RETRY(write(fd, value, strlen(value) + 1));
+    ret = TEMP_FAILURE_RETRY(write(fd, value, strlen(value)));
     if (ret == -1) {
         ret = -errno;
-    } else if (ret != strlen(value) + 1) {
+    } else if (ret != strlen(value)) {
         /* even though EAGAIN is an errno value that could be set
            by write() in some cases, none of them apply here.  So, this return
            value can be clearly identified when debugging and suggests the
@@ -471,8 +471,32 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
     long playLengthMs;
     int ret;
 
-    if (ledVib.mDetected)
-        return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+    if (ledVib.mDetected) {
+        switch (effect) {
+            case Effect::CLICK:
+                playLengthMs = 15;
+                break;
+            case Effect::DOUBLE_CLICK:
+                playLengthMs = 25;
+                break;
+            case Effect::TICK:
+                playLengthMs = 10;
+                break;
+            case Effect::THUD:
+                playLengthMs = 20;
+                break;
+            case Effect::POP:
+                playLengthMs = 15;
+                break;
+            case Effect::HEAVY_CLICK:
+                playLengthMs = 25;
+                break;
+            default:
+                return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
+        }
+        *_aidl_return = playLengthMs;
+        return on(playLengthMs, callback);
+    }
 
     ALOGD("Vibrator perform effect %d", effect);
 
@@ -501,9 +525,6 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
 }
 
 ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
-    if (ledVib.mDetected)
-        return ndk::ScopedAStatus::ok();
-
     *_aidl_return = {Effect::CLICK, Effect::DOUBLE_CLICK, Effect::TICK, Effect::THUD,
                      Effect::POP, Effect::HEAVY_CLICK};
 
